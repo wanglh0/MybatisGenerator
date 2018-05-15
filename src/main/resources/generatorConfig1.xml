@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- ojdbc6.jar已经直接放到项目中,无需指定了,同时mysql驱动包也一样,这里同样无需指定 -->
+    <!-- <classPathEntry location="ojdbc6.jar" /> -->
+    <context id="context1" targetRuntime="MyBatis3">
+        <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 这里的type里写的是你的实现类的类全路径 -->
+        <commentGenerator type="com.infohold.smallpay.map.MyCommentGenerator">
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://219.149.226.180:5432/projectmanage"
+                        userId="postgres"
+                        password="1">
+            <!-- 针对oracle数据库 -->
+            <!--<property name="remarksReporting" value="true"></property>-->
+        </jdbcConnection>
+        　　　　
+        　　　　 <!-- mysql配置 -->
+        <!--   <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                  connectionURL="jdbc:mysql://localhost:3306/bookshop" userId="root"
+                  password="root">
+                    针对mysql数据库
+                    <property name="useInformationSchema" value="true"></property>
+          </jdbcConnection> -->
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- dto class -->
+        <javaModelGenerator targetPackage="com.infohold.smallpay.map.model"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- mybatis xml file -->
+        <sqlMapGenerator targetPackage="com.infohold.smallpay.map.dao"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- mapper class -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <!--不生成帮助类（Exmaples） -->
+        <!-- enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false" -->
+        <!--已生成的表 <table schema="demo" tableName="USER" domainObjectName="User"></table> -->
+        <table schema="" tableName="p_usercheck" domainObjectName="UserCheck"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+    </context>
+</generatorConfiguration>

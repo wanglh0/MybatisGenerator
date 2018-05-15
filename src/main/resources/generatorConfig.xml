@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动包位置 -->
+    <!--<classPathEntry location="D:\java\generator\postgresql-42.0.0.jar" /> -->
+    <!--导入属性配置-->
+    <properties resource="generator.properties"></properties>
+
+    <classPathEntry location="${jdbc.driverLocation}"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--<commentGenerator>
+            &lt;!&ndash; 是否取消注释 &ndash;&gt;
+            <property name="suppressDate" value="true"/>
+            &lt;!&ndash; 是否生成注释代时间戳&ndash;&gt;
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>-->
+
+        <commentGenerator type="com.infohold.smallpay.map.MyCommentGenerator">
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码 -->
+        <!--<jdbcConnection driverClass="org.postgresql.Driver" connectionURL="jdbc:postgresql://219.149.226.180:5432/projectmanage" userId="postgres" password="1">-->
+        <!--</jdbcConnection>-->
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection
+                driverClass="${jdbc.driverClass}"
+                connectionURL="${jdbc.connectionURL}"
+                userId="${jdbc.userId}"
+                password="${jdbc.password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.infohold.smallpay.map.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator  targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.infohold.smallpay.map.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+		<table tableName="p_usercheck" domainObjectName="UserCheck" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		<!-- <table tableName="company_check_task_item" domainObjectName="CompanyCheckTaskItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		<table tableName="company_check_task_item_hidden" domainObjectName="CompanyCheckTaskItemHidden" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		<table tableName="company_check_hidden_scale" domainObjectName="Company_check_hidden_scale" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		-->
+    </context>
+</generatorConfiguration>

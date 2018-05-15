@@ -153,6 +153,7 @@ public class MyCommentGenerator implements CommentGenerator {
         field.addJavaDocLine(" */");
     }
 
+    //生成方法中的注释（dao 中）
     public void addGeneralMethodComment(Method method, IntrospectedTable introspectedTable) {
         if (true) {
             return;
@@ -161,7 +162,7 @@ public class MyCommentGenerator implements CommentGenerator {
         addJavadocTag(method, false);
         method.addJavaDocLine(" */");
     }
-
+    //生成实体类中的get注释
     public void addGetterComment(Method method, IntrospectedTable introspectedTable,
                                   IntrospectedColumn introspectedColumn) {
         if (true) {
@@ -181,6 +182,7 @@ public class MyCommentGenerator implements CommentGenerator {
         method.addJavaDocLine(" */");
     }
 
+    //生成实体类中的set注释
     public void addSetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
         if (true) {

@@ -127,18 +127,24 @@ public class MyCommentGenerator implements CommentGenerator {
         innerEnum.addJavaDocLine(sb.toString().replace("\n", " "));
         innerEnum.addJavaDocLine(" */");
     }
-
+    //实体类中字段的属性
     public void addFieldComment(Field field, IntrospectedTable introspectedTable,
                                 IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
             return;
         }
+//        StringBuilder sb = new StringBuilder();
+//        field.addJavaDocLine("/**");
+//        sb.append(" * ");
+//        sb.append(introspectedColumn.getRemarks());
+//        field.addJavaDocLine(sb.toString().replace("\n", " "));
+//        field.addJavaDocLine(" */");
+
+        //自己按需求修改
         StringBuilder sb = new StringBuilder();
-        field.addJavaDocLine("/**");
-        sb.append(" * ");
+        sb.append("// ");
         sb.append(introspectedColumn.getRemarks());
-        field.addJavaDocLine(sb.toString().replace("\n", " "));
-        field.addJavaDocLine(" */");
+        field.addJavaDocLine(sb.toString().trim());
     }
 
     public void addFieldComment(Field field, IntrospectedTable introspectedTable) {

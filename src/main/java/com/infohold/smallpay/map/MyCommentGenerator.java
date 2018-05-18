@@ -141,6 +141,8 @@ public class MyCommentGenerator implements CommentGenerator {
 //        field.addJavaDocLine(" */");
 
         //自己按需求修改
+
+
         StringBuilder sb = new StringBuilder();
         sb.append("// ");
         sb.append(introspectedColumn.getRemarks());

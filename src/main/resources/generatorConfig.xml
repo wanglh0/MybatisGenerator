@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <!-- 数据库驱动包位置 -->
-    <!--<classPathEntry location="D:\java\generator\postgresql-42.0.0.jar" /> -->
+
     <!--导入属性配置-->
     <properties resource="generator.properties"></properties>
 
-    <classPathEntry location="${jdbc.driverLocation}"/>
+    <!--<classPathEntry location="${jdbc.driverLocation}"/>-->
 
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <!--<commentGenerator>
@@ -46,14 +45,8 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-		<table tableName="p_usercheck" domainObjectName="UserCheck" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<!--<table tableName="" domainObjectName="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <table tableName=""></table>
 
-		<!-- <table tableName="company_check_task_item" domainObjectName="CompanyCheckTaskItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-
-		<table tableName="company_check_task_item_hidden" domainObjectName="CompanyCheckTaskItemHidden" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-
-		<table tableName="company_check_hidden_scale" domainObjectName="Company_check_hidden_scale" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-
-		-->
     </context>
 </generatorConfiguration>

@@ -149,16 +149,17 @@ public class MyCommentGenerator implements CommentGenerator {
         field.addJavaDocLine(sb.toString().trim());
     }
 
+    //生成实体类对应的Example中字段的注释
     public void addFieldComment(Field field, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
         }
-        StringBuilder sb = new StringBuilder();
-        field.addJavaDocLine("/**");
-        sb.append(" * ");
-        sb.append(introspectedTable.getFullyQualifiedTable());
-        field.addJavaDocLine(sb.toString().replace("\n", " "));
-        field.addJavaDocLine(" */");
+//        StringBuilder sb = new StringBuilder();
+//        field.addJavaDocLine("/**");
+//        sb.append(" * ");
+//        sb.append(introspectedTable.getFullyQualifiedTable());
+//        field.addJavaDocLine(sb.toString().replace("\n", " "));
+//        field.addJavaDocLine(" */");
     }
 
     //生成方法中的注释（dao 中）
